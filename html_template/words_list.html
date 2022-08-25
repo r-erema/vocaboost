@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocaboost</title>
+</head>
+<body>
+    <div>
+        <a href="{{$.index_http_path}}">Main</a>
+    </div>
+    <form action="{{$.save_words_http_path}}" method="post">
+        <ol>
+        {{range .words}}
+            <li>
+                <strong>{{.}}</strong> |
+                <label>
+                    Unknown
+                    <input type="radio" name="{{.}}" value="none" checked />
+                </label> |
+                <label>
+                    Known
+                    <input type="radio" name="{{.}}" value="{{$.known_words_value}}" />
+                </label> |
+                <label>
+                    Ignored
+                    <input type="radio" name="{{.}}" value="{{$.ignored_words_value}}" />
+                </label>
+            </li>
+        {{end}}
+        </ol>
+        <input type="submit" />
+    </form>
+</body>
+</html>

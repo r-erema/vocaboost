@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  redis:
+    image: redis:7.0.8-alpine
+    container_name: "vocaboost-redis"
+    volumes:
+      - ./data:/data
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--save", "1", "1"]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocaboost</title>
+</head>
+<body>
+    <div>
+        <a href="{{$.index_http_path}}">Main</a>
+    </div>
+    <form action="{{$.upload_spaced_repetition}}" method="post">
+        <section>
+            <label>
+                <textarea name="unknown_words" rows="20" cols="50" >{{range .unknown_words}}{{.}}&#10;{{end}}</textarea>
+            </label>
+        </section>
+        <section>
+            <input type="submit" value="Upload to the Notion" />
+        </section>
+    </form>
+</body>
+</html>
