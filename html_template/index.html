@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocaboost</title>
+</head>
+<body>
+<ul>
+    <li>
+        Known words count: {{ .known_words_count }}
+    </li>
+    <li>
+        Ignored words count: {{ .ignored_words_count }}
+    </li>
+</ul>
+<form method="post">
+    <div>
+        <label>
+            <textarea name="text" rows="40" cols="100" ></textarea>
+        </label>
+    </div>
+    <div>
+        <input type="submit" />
+    </div>
+</form>
+</body>
+</html>
